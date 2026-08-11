@@ -164,18 +164,7 @@ step_model = stepwise(
 # whether the residuals follow a normal distribution.
 # H0: The residuals are normally distributed.
 # H1: The residuals are not normally distributed.
-
-stat, p = shapiro(step_model.resid)
-
-print(f"Statistic = {stat:.4f}")
-print(f"P-value   = {p:.15f}")
-
-if p > 0.05:
-    print("\nFail to reject H0.")
-    print("Residuals are normally distributed.")
-else:
-    print("\nReject H0.")
-    print("Residuals are not normally distributed.")
+shapiro(step_model.resid)
 
 # Shapiro-Francia test
 shapiro_francia(step_model.resid)
@@ -186,16 +175,7 @@ shapiro_francia(step_model.resid)
 # time series, the Durbin-Watson test was performed to assess the
 # independence of the residuals.
 
-dw = durbin_watson(step_model.resid)
-
-print(f"Durbin-Watson Statistic = {dw:.4f}")
-
-if 1.5 <= dw <= 2.5:
-    print("\nResiduals are independent.")
-elif dw < 1.5:
-    print("\nEvidence of positive autocorrelation.")
-else:
-    print("\nEvidence of negative autocorrelation.")
+durbin_watson(step_model.resid)
 
 # In[ ]: Variance Inflation Factor (VIF)
 
@@ -222,25 +202,30 @@ print(vif)
 # H0: The residuals are homoscedastic.
 # H1: The residuals are heteroscedastic.
 
-lm_stat, lm_pvalue, f_stat, f_pvalue = het_breuschpagan(
-    step_model.resid,
-    step_model.model.exog
-)
+het_breuschpagan(step_model.resid, sm.add_constant(step_model.fittedvalues))
 
-print("Breusch-Pagan Test")
-print("-" * 40)
-print(f"LM Statistic : {lm_stat:.4f}")
-print(f"LM p-value   : {lm_pvalue:.4f}")
-print(f"F Statistic  : {f_stat:.4f}")
-print(f"F p-value    : {f_pvalue:.4f}")
+# In[ ]: Conclusions
 
-if lm_pvalue > 0.05:
-    print("\nFail to reject H0.")
-    print("There is no evidence of heteroscedasticity.")
-    print("The assumption of homoscedasticity is satisfied.")
-else:
-    print("\nReject H0.")
-    print("Heteroscedasticity detected.")
-    print("The assumption of homoscedasticity is violated.")
-    
-# In[ ]:
+# The baseline multiple linear regression model explained approximately
+
+# 89.7% of the variance in Sales (R² = 0.8972).
+
+# Both the Shapiro-Francia and Shapiro-Wilk tests indicated that the
+
+# residuals do not follow a normal distribution (p < 0.05).
+
+# The Durbin-Watson test indicated no evidence of positive
+
+# autocorrelation among the residuals (DW ≈ 2.08, p > 0.05).
+
+# The Variance Inflation Factor (VIF) indicated no evidence
+
+# of multicollinearity among the explanatory variables.
+
+# The Breusch-Pagan test indicated no evidence of heteroskedasticity
+
+# (p > 0.05), suggesting that the residual variance is approximately constant.
+
+# Based on the normality diagnostics, a Box-Cox transformation will
+
+# be investigated in the next step to improve the model assumptions.
