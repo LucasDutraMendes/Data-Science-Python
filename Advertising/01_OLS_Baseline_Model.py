@@ -182,17 +182,17 @@ durbin_watson(step_model.resid)
 # The Variance Inflation Factor (VIF) was calculated to assess
 # multicollinearity among the explanatory variables.
 
-X = step_model.model.exog
+X = step_model.model.exog[:, 1:]
 
 vif = pd.DataFrame({
-    "Variable": step_model.model.exog_names,
+    "Variable": step_model.model.exog_names[1:],
     "VIF": [
         variance_inflation_factor(X, i)
         for i in range(X.shape[1])
     ]
 })
 
-print(vif)
+print(vif.round(2))
 
 # In[ ]: Breusch-Pagan Test
 
@@ -202,7 +202,15 @@ print(vif)
 # H0: The residuals are homoscedastic.
 # H1: The residuals are heteroscedastic.
 
-het_breuschpagan(step_model.resid, sm.add_constant(step_model.fittedvalues))
+het_breuschpagan(
+    linear_model.resid,
+    linear_model.model.exog
+) 
+
+het_breuschpagan(
+    step_model.resid,
+    step_model.model.exog
+) 
 
 # In[ ]: Conclusions
 
