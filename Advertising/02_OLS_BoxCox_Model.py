@@ -153,3 +153,23 @@ print(vif)
 # H1: The residuals are heteroscedastic.
 
 het_breuschpagan(step_model.resid, sm.add_constant(step_model.fittedvalues))
+
+# In[ ]: Conclusion
+
+# The transformation analysis improved the overall explanatory power
+# of the regression model compared with the baseline specification.
+
+# The Stepwise procedure removed the predictor 'newspaper',
+# resulting in a more parsimonious model with virtually the same
+# explanatory power.
+
+# The final model retains TV and radio as the main predictors of Sales,
+# while newspaper provided little additional explanatory value
+# after accounting for the other advertising channels.
+
+# The residual diagnostics show that some OLS assumptions remain
+# imperfect even after the transformations, particularly normality
+# and heteroskedasticity.
+
+# Overall, the final model provides a strong explanation of Sales variation
+# while offering a simpler specification based on TV and radio advertising.
