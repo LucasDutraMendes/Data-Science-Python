@@ -186,25 +186,18 @@ print(prediction_km_l)   # 12.79 km/l
 # model, followed by Stepwise variable selection and regression diagnostics.
 
 # The Shapiro-Francia test indicated that the residuals are not normally
-# distributed for both the full model (W = 0.9831, p = 0.000258) and the
-# Stepwise model (W = 0.9826, p = 0.000200). Therefore, the null hypothesis
-# of normality is rejected for both models.
+# distributed for both the full and Stepwise models (p < 0.05).
 
 # The VIF analysis indicated severe multicollinearity among several
-# explanatory variables. Displacement (VIF = 54.94), horsepower
-# (VIF = 46.14), weight (VIF = 113.01), and model_year (VIF = 32.51)
-# presented very high VIF values, indicating substantial overlap among
-# these predictors. In contrast, origin_2 (VIF = 1.85) and origin_3
-# (VIF = 2.09) showed low levels of multicollinearity.
+# explanatory variables, particularly displacement, horsepower, weight,
+# and model_year.
 
-# The Breusch-Pagan test indicated strong evidence of heteroscedasticity
-# (LM = 32.1012, p < 0.001). Therefore, the null hypothesis of
-# homoscedasticity is rejected, indicating that the residual variance is
-# not constant.
+# The Breusch-Pagan test indicated strong evidence of heteroskedasticity
+# (p < 0.001), suggesting that the residual variance is not constant.
 
-# Overall, the regression model captures important relationships between
-# vehicle characteristics and fuel efficiency, but the diagnostic tests
-# indicate violations of important classical regression assumptions,
-# particularly normality, multicollinearity, and homoscedasticity.
-# Therefore, additional model refinement and alternative regression
-# techniques should be considered in future analyses.
+# Overall, the baseline model captures important relationships between
+# vehicle characteristics and fuel efficiency, but the diagnostic results
+# indicate that several classical OLS assumptions are not fully satisfied.
+
+# Therefore, additional model refinement and transformation strategies
+# will be investigated in the next step.
