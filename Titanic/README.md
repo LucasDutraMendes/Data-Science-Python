@@ -18,7 +18,6 @@ in survival outcomes across passenger profiles.
 - Dummy Variables
 - Binary Logistic Regression
 - Stepwise Variable Selection
-- Likelihood Ratio Test
 - Model Evaluation
 - Accuracy
 - Sensitivity and Specificity
@@ -47,7 +46,7 @@ The analysis uses the following variables:
 
 ### Data Preparation
 
-Missing values in `Age` were replaced using the median age.
+Missing values in `Age` were replaced using the mean age.
 
 Categorical variables such as `Sex` and `Pclass` were converted into
 dummy variables for use in the logistic regression model.
@@ -70,9 +69,6 @@ The final model retained:
 - `Age`
 - `SibSp`
 
-`Parch` was removed because its exclusion did not significantly worsen
-the model fit according to the Likelihood Ratio Test.
-
 ## Model Evaluation
 
 The final model achieved:
@@ -81,8 +77,8 @@ The final model achieved:
 - Gini: `0.798`
 - Maximum training accuracy: `0.8561236623067776`
 - Classification cutoff: `0.67`
-- Sensitivity: `0.5789473684210527`
-- Specificity: ` 0.9489981785063752`
+- Sensitivity: `0.687096`
+- Specificity: `0.9548022`
 
 VIF and Tolerance values showed no evidence of problematic
 multicollinearity.
@@ -123,7 +119,7 @@ probabilities, while older passengers and those traveling with more
 siblings or spouses had lower predicted survival probabilities.
 
 The model performed well at distinguishing between survivors and
-non-survivors, achieving an AUC of 0.854.
+non-survivors, achieving an AUC of 0.899.
 
 We also checked the influence of individual observations. Although some
 passengers had a noticeable impact on the model estimates, the main
@@ -135,7 +131,7 @@ turn passenger data into meaningful insights.
 
 ## Files
 
-- `01_GLM_Baseline_Model.R` - Data preparation, logistic regression,
+- `01_GLM_Baseline_Model.py` - Data preparation, logistic regression,
   model evaluation, diagnostics, and predictions.
 - `titanic.csv` - Titanic dataset.
 
