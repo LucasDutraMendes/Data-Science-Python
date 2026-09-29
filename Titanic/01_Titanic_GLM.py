@@ -1,5 +1,5 @@
 # Project: Titanic Dataset
-# Script : 01_GLM_Baseline_Model.R
+# Script : 01_Titanic_GLM.py
 # Purpose: Build the baseline binary logistic regression model and evaluate
 #          its initial assumptions.
 # Author : Lucas Dutra Mendes
