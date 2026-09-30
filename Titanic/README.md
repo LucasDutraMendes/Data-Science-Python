@@ -131,7 +131,7 @@ turn passenger data into meaningful insights.
 
 ## Files
 
-- `01_GLM_Baseline_Model.py` - Data preparation, logistic regression,
+- `01_Titanic_GLM.py` - Data preparation, logistic regression,
   model evaluation, diagnostics, and predictions.
 - `titanic.csv` - Titanic dataset.
 
