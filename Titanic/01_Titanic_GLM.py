@@ -6,20 +6,19 @@
 
 # In[ ]:
 
-import pandas as pd # manipulação de dado em formato de dataframe
-import seaborn as sns # biblioteca de visualização de informações estatísticas
-import matplotlib.pyplot as plt # biblioteca de visualização de dados
-import statsmodels.api as sm # biblioteca de modelagem estatística
-import numpy as np # biblioteca para operações matemáticas multidimensionais
-from scipy import stats # estatística chi2
-from statsmodels.iolib.summary2 import summary_col # comparação entre modelos
-import plotly.graph_objs as go # gráfico 3D
-import statsmodels.formula.api as smf # estimação do modelo logístico binário
-from statstests.process import stepwise
-from statsmodels.stats.outliers_influence import variance_inflation_factor
-from sklearn.metrics import roc_curve, confusion_matrix, roc_auc_score
-import warnings
-
+import pandas as pd  # Data manipulation and DataFrame management
+import seaborn as sns  # Statistical data visualization
+import matplotlib.pyplot as plt  # Data visualization and plot creation
+import statsmodels.api as sm  # Statistical modeling and statistical tests
+import numpy as np  # Numerical computing and array operations
+from scipy import stats  # Statistical functions and probability distributions
+from statsmodels.iolib.summary2 import summary_col  # Creates customized summaries and comparisons of statistical models
+import plotly.graph_objs as go  # Interactive graphs and 3D data visualization
+import statsmodels.formula.api as smf  # Statistical models specified using formula syntax, including multinomial logistic regression
+from statstests.process import stepwise  # Stepwise variable selection for supported statistical models
+from statsmodels.stats.outliers_influence import variance_inflation_factor  # Calculates the Variance Inflation Factor (VIF) to assess multicollinearity
+from sklearn.metrics import roc_curve, confusion_matrix, roc_auc_score  # Model evaluation metrics, including ROC curves, confusion matrices, and AUC
+import warnings  # Controls and manages Python warning messages
 
 # In[ ]: Loading Dataset
     
@@ -65,7 +64,8 @@ df_titanic["Pclass"].value_counts()
     
 titanic_dummies = pd.get_dummies(df_titanic,
     columns=["Sex", "Pclass"],
-    drop_first=False)    
+    drop_first=False,
+    dtype=int)    
 
 # Removing these variables from the analysis    
 titanic_dummies = titanic_dummies.drop(columns=["Name"])
@@ -368,27 +368,23 @@ predictions
 # Conclusion
 #===============================================================================
 
-# The analysis indicates that passenger class, sex, age, and number of siblings
-# or spouses aboard were relevant factors associated with survival.
+# The analysis shows that survival on the Titanic was strongly related to
+# passenger profile.
 
-# Female passengers and passengers from higher classes were more likely to
-# survive, while increasing age and the number of siblings or spouses aboard
-# were associated with lower survival probability, holding the other variables
-# constant.
+# Women and passengers traveling in higher classes had higher survival
+# probabilities, while older passengers and those traveling with more
+# siblings or spouses had lower predicted survival probabilities.
 
-# These results highlight a strong relationship between passenger profile and
-# survival outcomes, suggesting that survival during the Titanic disaster was
-# not evenly distributed across the passenger population.
+# The model achieved an AUC of 0.899 and a Gini coefficient of 0.798,
+# indicating a strong ability to discriminate between survivors and
+# non-survivors in the analyzed dataset.
 
-# From a predictive perspective, the model showed good discriminatory
-# ability (AUC = 0.8992). Using a cutoff of 0.67, the model achieved
-# a sensitivity of approximately 0.68 and a specificity of approximately 0.95.
+# Cook's Distance was also used to assess the influence of individual
+# observations. Although some passengers had a noticeable impact on the
+# model estimates, the main relationships remained consistent when these
+# observations were excluded.
 
-# Overall, the analysis shows how passenger characteristics in the dataset
-# can be used to identify groups with substantially different survival
-# outcomes.
-
-# Sensitivity analysis showed that the direction and statistical significance
-# of the main predictors remained consistent after excluding observations
-# flagged by Cook's Distance. However, some coefficient magnitudes changed,
-# indicating that these observations influenced the estimated coefficients.
+# Overall, the analysis demonstrates how binary logistic regression can
+# be used to analyze a real-world classification problem, evaluate
+# predictive performance, investigate influential observations, and
+# estimate survival probabilities for individual passenger profiles.
