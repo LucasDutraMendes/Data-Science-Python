@@ -53,15 +53,12 @@ trace = go.Scatter3d(
     mode="markers",
     marker=dict(
         size=5,
-        opacity=0.8
-    ),
-)
+        opacity=0.8),)
 
 layout = go.Layout(
     margin=dict(l=0, r=0, b=0, t=0),
     width=800,
-    height=800,
-)
+    height=800,)
 
 plot_figure = go.Figure(data=[trace], layout=layout)
 
@@ -69,9 +66,7 @@ plot_figure.update_layout(
     scene=dict(
         xaxis_title="TV",
         yaxis_title="Sales",
-        zaxis_title="Radio"
-    )
-)
+        zaxis_title="Radio"))
 
 plot_figure.show()
 
@@ -89,8 +84,7 @@ sns.heatmap(
     corr,
     annot=True,
     cmap=plt.cm.viridis,
-    annot_kws={"size": 22}
-)
+    annot_kws={"size": 22})
 
 plt.show()
 
@@ -135,8 +129,7 @@ plt.show()
 # Fit the multiple linear regression model
 linear_model = sm.OLS.from_formula(
     "sales ~ TV + radio + newspaper",
-    data=df_advertising
-).fit()
+    data=df_advertising).fit()
 
 # Display the model summary
 linear_model.summary()
