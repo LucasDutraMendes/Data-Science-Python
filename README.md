@@ -13,7 +13,7 @@ The primary purpose of this repository is to demonstrate my ability to transform
 ## Repository Structure
 
 ```text
-Python/
+Data-Science-Python/
 │
 ├── Advertising/
 │   ├── 01_OLS_Baseline_Model.py
