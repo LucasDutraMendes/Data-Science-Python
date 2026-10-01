@@ -1,46 +1,75 @@
-# Titanic Survival Analysis
+# Titanic Dataset - Binary Logistic Regression
 
-## Description
+**Status:** ✅ Completed
 
-This project applies binary logistic regression to the Titanic dataset
-to analyze which passenger characteristics were associated with survival
-and to evaluate the model's predictive performance.
+This project explores the **Titanic** dataset using **Binary Logistic Regression** in **Python** to analyze the factors associated with passenger survival and evaluate the model's predictive performance.
 
-The analysis focuses on passenger class, sex, age, and number of siblings
-or spouses aboard, using these characteristics to identify differences
-in survival outcomes across passenger profiles.
+The project documents the development of a classification model from data preparation and categorical variable encoding through variable selection, model evaluation, influential observation analysis, and individual prediction.
 
-## Topics Covered
-
-- Data Preparation
-- Missing Data Treatment
-- Categorical Variables
-- Dummy Variables
-- Binary Logistic Regression
-- Stepwise Variable Selection
-- Model Evaluation
-- Accuracy
-- Sensitivity and Specificity
-- ROC Curve
-- AUC and Gini
-- Multicollinearity
-- VIF and Tolerance
-- Cook's Distance
-- Model Prediction
+---
 
 ## Dataset
 
-The project uses the Titanic dataset, containing information about
-891 passengers and 12 variables.
+The **Titanic** dataset contains information about **891 passengers** and 12 variables.
 
-The analysis uses the following variables:
+**Predictor Variables**
 
-- `Survived` - survival outcome
-- `Pclass` - passenger class
-- `Sex` - passenger sex
-- `Age` - passenger age
-- `SibSp` - number of siblings or spouses aboard
-- `Parch` - number of parents or children aboard
+- Pclass
+- Sex
+- Age
+- SibSp
+- Parch
+
+**Target Variable**
+
+- Survived
+
+---
+
+## Objectives
+
+- Explore the relationship between passenger characteristics and survival.
+- Prepare the dataset for statistical modeling.
+- Handle missing values.
+- Encode categorical variables using dummy variables.
+- Build a Binary Logistic Regression model.
+- Perform Stepwise variable selection.
+- Evaluate classification performance.
+- Analyze different classification thresholds.
+- Identify influential observations using Cook's Distance.
+- Evaluate multicollinearity.
+- Perform individual passenger predictions.
+- Interpret the main analytical findings.
+
+---
+
+## Project Structure
+
+```text
+Titanic/
+│
+├── 01_GLM_Baseline_Model.py
+│   ├── Data Cleaning
+│   ├── Missing Value Treatment
+│   ├── Categorical Variable Encoding
+│   ├── Logistic Regression (GLM)
+│   ├── Stepwise Variable Selection
+│   ├── Cook's Distance
+│   ├── Sensitivity Analysis
+│   ├── ROC Curve
+│   ├── AUC
+│   ├── Gini Coefficient
+│   ├── Confusion Matrix
+│   ├── Sensitivity
+│   ├── Specificity
+│   ├── Classification Threshold
+│   ├── Variance Inflation Factor (VIF)
+│   ├── Tolerance
+│   ├── Individual Prediction
+│   └── Conclusion
+│
+└── README.md
+```
 
 ## Analysis
 
@@ -129,13 +158,6 @@ Overall, the analysis shows that survival was far from evenly distributed
 across passenger profiles and demonstrates how statistical modeling can
 turn passenger data into meaningful insights.
 
-## Files
-
-- `01_Titanic_GLM.py` - Data preparation, logistic regression,
-  model evaluation, diagnostics, and predictions.
-- `titanic.csv` - Titanic dataset.
-
 ## Author
 
 Lucas Dutra Mendes
-
