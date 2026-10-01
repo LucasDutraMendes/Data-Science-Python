@@ -17,33 +17,39 @@ As this portfolio grows, new projects will explore different machine learning al
 ```text
 Data-Science-Python/
 │
-├── Advertising/
-│   ├── 01_OLS_Baseline_Model.py
-│   │   ├── Exploratory Data Analysis (EDA)
-│   │   ├── Pearson Correlation
-│   │   ├── Multiple Linear Regression (OLS)
-│   │   ├── Confidence Intervals
-│   │   ├── Stepwise Variable Selection
-│   │   ├── Shapiro-Wilk
-│   │   ├── Shapiro-Francia
-│   │   ├── Durbin-Watson
-│   │   ├── Variance Inflation Factor (VIF)
-│   │   └── Breusch-Pagan
-│   │
-│   ├── 02_BoxCox_Model_Comparison.py
-│   │   ├── Box-Cox Transformation (Dependent Variable)
-│   │   ├── Box-Cox Transformation (Independent Variables)
-│   │   ├── Yeo-Johnson Transformation
-│   │   ├── Full Transformation
-│   │   ├── OLS Model Comparison
-│   │   ├── Stepwise Variable Selection
-│   │   ├── Shapiro-Wilk
-│   │   ├── Shapiro-Francia
-│   │   ├── Durbin-Watson
-│   │   ├── Variance Inflation Factor (VIF)
-│   │   └── Breusch-Pagan
-│   │
-│   └── README.md
+Advertising/
+├── 01_OLS_Baseline_Model.py
+│   ├── Exploratory Data Analysis (EDA)
+│   ├── Descriptive Statistics
+│   ├── 3D Scatter Plot
+│   ├── Correlation Matrix
+│   ├── Pairplot
+│   ├── Pearson Correlation
+│   ├── Multiple Linear Regression (OLS)
+│   ├── Confidence Intervals
+│   ├── Stepwise Variable Selection
+│   ├── Shapiro-Wilk
+│   ├── Shapiro-Francia
+│   ├── Durbin-Watson
+│   ├── Variance Inflation Factor (VIF)
+│   ├── Breusch-Pagan
+│   └── Conclusion
+│
+├── 02_BoxCox_Model_Comparison.py
+│   ├── Box-Cox Transformation (Dependent Variable)
+│   ├── Box-Cox Transformation (Independent Variables)
+│   ├── Yeo-Johnson Transformation
+│   ├── Full Transformation
+│   ├── OLS Model Comparison
+│   ├── Stepwise Variable Selection
+│   ├── Shapiro-Wilk
+│   ├── Shapiro-Francia
+│   ├── Durbin-Watson
+│   ├── Variance Inflation Factor (VIF)
+│   ├── Breusch-Pagan
+│   └── Conclusion
+│
+└── README.md
 │
 ├── Auto-MPG/
 │   ├── 01_OLS_Baseline_Model.py
