@@ -72,13 +72,23 @@ Advertising/
 │   └── README.md
 │
 ├── Cardiovascular-Disease/
-│   ├── 01_GLM_Baseline_Model.py
+│   ├── 01_GLM_Cardiovascular_Disease.py
 │   │   ├── Data Cleaning
+│   │   ├── Missing Value Treatment
+│   │   ├── Categorical Variable Encoding
 │   │   ├── Multinomial Logistic Regression
 │   │   ├── Likelihood Ratio Test
 │   │   ├── Feature Significance Analysis
+│   │   ├── Odds Ratios
+│   │   ├── Variance Inflation Factor (VIF)
 │   │   ├── Model Evaluation
-│   │   └── Individual Prediction
+│   │   ├── Confusion Matrix
+│   │   ├── Sensitivity
+│   │   ├── Specificity
+│   │   ├── Class Distribution
+│   │   ├── Individual Prediction
+│   │   ├── Variable Interpretation
+│   │   └── Conclusion
 │   │
 │   └── README.md
 │
