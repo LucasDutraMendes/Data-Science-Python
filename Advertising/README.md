@@ -42,9 +42,6 @@ The **Advertising** dataset contains advertising expenditures across three diffe
 ```text
 Advertising/
 │
-├── Advertising.csv
-├── README.md
-│
 ├── 01_OLS_Baseline_Model.py
 │   ├── Exploratory Data Analysis (EDA)
 │   ├── Descriptive Statistics
@@ -62,19 +59,21 @@ Advertising/
 │   ├── Breusch-Pagan
 │   └── Conclusion
 │
-└── 02_BoxCox_Model_Comparison.py
-    ├── Box-Cox Transformation (Dependent Variable)
-    ├── Box-Cox Transformation (Independent Variables)
-    ├── Yeo-Johnson Transformation
-    ├── Full Transformation
-    ├── OLS Model Comparison
-    ├── Stepwise Variable Selection
-    ├── Shapiro-Wilk
-    ├── Shapiro-Francia
-    ├── Durbin-Watson
-    ├── Variance Inflation Factor (VIF)
-    ├── Breusch-Pagan
-    └── Conclusion
+├── 02_BoxCox_Model_Comparison.py
+│   ├── Box-Cox Transformation (Dependent Variable)
+│   ├── Box-Cox Transformation (Independent Variables)
+│   ├── Yeo-Johnson Transformation
+│   ├── Full Transformation
+│   ├── OLS Model Comparison
+│   ├── Stepwise Variable Selection
+│   ├── Shapiro-Wilk
+│   ├── Shapiro-Francia
+│   ├── Durbin-Watson
+│   ├── Variance Inflation Factor (VIF)
+│   ├── Breusch-Pagan
+│   └── Conclusion
+│
+└── README.md
 ```
 
 ## Conclusion
