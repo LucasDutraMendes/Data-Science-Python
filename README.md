@@ -112,7 +112,43 @@ Advertising/
 │   └── README.md
 │
 ├── Census/
-│   └── [Project details to be documented]
+│   ├── 01_Data_Preprocessing.py
+│   │   ├── Dataset Loading
+│   │   ├── Exploratory Data Analysis (EDA)
+│   │   ├── Missing Value Check
+│   │   ├── Class Distribution Analysis
+│   │   ├── Data Visualization
+│   │   ├── Label Encoding
+│   │   ├── One-Hot Encoding
+│   │   ├── Feature Standardization
+│   │   ├── Train/Test Split
+│   │   └── Data Serialization
+│   │
+│   ├── 02_Naive_Bayes_Model.py
+│   │   ├── Data Loading
+│   │   ├── Gaussian Naive Bayes
+│   │   ├── Model Evaluation
+│   │   ├── Confusion Matrix
+│   │   ├── Classification Report
+│   │   └── Conclusion
+│   │
+│   ├── 03_Decision_Tree_Model.py
+│   │   ├── Data Loading
+│   │   ├── Decision Tree
+│   │   ├── Model Evaluation
+│   │   ├── Confusion Matrix
+│   │   ├── Classification Report
+│   │   └── Conclusion
+│   │
+│   ├── 04_Random_Forest_Model.py
+│   │   ├── Data Loading
+│   │   ├── Random Forest
+│   │   ├── Model Evaluation
+│   │   ├── Confusion Matrix
+│   │   ├── Classification Report
+│   │   └── Conclusion
+│   │
+│   └── README.md
 │
 ├── Credit-Data/
 │   └── [Project details to be documented]
