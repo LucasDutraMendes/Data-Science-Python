@@ -10,7 +10,7 @@ The primary purpose of this repository is to demonstrate my ability to transform
 
 ---
 
-## Projects
+## Repository Structure
 
 ```text
 Python/
