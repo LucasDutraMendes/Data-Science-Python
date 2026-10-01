@@ -85,9 +85,10 @@ Python/
 │
 └── README.md
 
+```
+
 As this portfolio grows, new projects will explore different machine learning algorithms, statistical techniques, and analytical methodologies while maintaining the same emphasis on reproducibility, documentation, and analytical reasoning.
 
-```
 ---
 
 ## Purpose
