@@ -8,6 +8,8 @@ This repository contains a collection of end-to-end Data Science projects develo
 
 The primary purpose of this repository is to demonstrate my ability to transform raw data into meaningful insights by applying statistical and machine learning techniques, evaluating model assumptions and performance, and developing well-structured and reproducible analytical solutions.
 
+As this portfolio grows, new projects will explore different machine learning algorithms, statistical techniques, and analytical methodologies while maintaining the same emphasis on reproducibility, documentation, and analytical reasoning.
+
 ---
 
 ## Repository Structure
@@ -99,8 +101,6 @@ Data-Science-Python/
 └── README.md
 
 ```
-
-As this portfolio grows, new projects will explore different machine learning algorithms, statistical techniques, and analytical methodologies while maintaining the same emphasis on reproducibility, documentation, and analytical reasoning.
 
 ---
 
