@@ -29,7 +29,7 @@ from statsmodels.stats.diagnostic import het_breuschpagan          # Breusch-Pag
 
 # Load the Advertising dataset
 df_advertising = pd.read_csv("Advertising.csv")
-
+ 
 # Display the dataset
 df_advertising
 
@@ -115,22 +115,16 @@ def corrfunc(x, y, **kws):
     ax.annotate(
         f"r = {r:.2f}",
         xy=(0.10, 0.90),
-        xycoords=ax.transAxes
-    )
+        xycoords=ax.transAxes)
 
     ax.annotate(
         f"p = {p:.3f}",
         xy=(0.40, 0.90),
-        xycoords=ax.transAxes
-    )
-
-
-plt.figure(figsize=(15, 10))
+        xycoords=ax.transAxes)
 
 graph = sns.pairplot(
     df_advertising,
-    diag_kind="kde"
-)
+    diag_kind="kde")
 
 graph.map(corrfunc)
 
@@ -155,13 +149,12 @@ linear_model.conf_int(alpha=0.05)
 # Fit the model using the Stepwise variable selection procedure
 step_model = stepwise(
     linear_model,
-    pvalue_limit=0.05
-)
+    pvalue_limit=0.05)
 
-# In[ ]: Shapiro-Wilk & Shapiro-Francia Normality Test
+# In[ ]: Shapiro-Wilk & Shapiro-Francia Normality Tests
 
-# The Shapiro-Wilk & Francia test was performed to evaluate
-# whether the residuals follow a normal distribution.
+# The Shapiro-Wilk and Shapiro-Francia tests were performed
+# to evaluate whether the residuals follow a normal distribution.
 # H0: The residuals are normally distributed.
 # H1: The residuals are not normally distributed.
 shapiro(step_model.resid)
@@ -188,9 +181,7 @@ vif = pd.DataFrame({
     "Variable": step_model.model.exog_names[1:],
     "VIF": [
         variance_inflation_factor(X, i)
-        for i in range(X.shape[1])
-    ]
-})
+        for i in range(X.shape[1])]})
 
 print(vif.round(2))
 
@@ -202,38 +193,25 @@ print(vif.round(2))
 # H0: The residuals are homoscedastic.
 # H1: The residuals are heteroscedastic.
 
-het_breuschpagan(
-    linear_model.resid,
-    linear_model.model.exog
-) 
-
-het_breuschpagan(
-    step_model.resid,
-    step_model.model.exog
-) 
+bp_test = het_breuschpagan(step_model.resid,step_model.model.exog)
+bp_test
 
 # In[ ]: Conclusions
 
 # The baseline multiple linear regression model explained approximately
-
 # 89.7% of the variance in Sales (R² = 0.8972).
 
 # Both the Shapiro-Francia and Shapiro-Wilk tests indicated that the
-
 # residuals do not follow a normal distribution (p < 0.05).
 
-# The Durbin-Watson test indicated no evidence of positive
-
-# autocorrelation among the residuals (DW ≈ 2.08, p > 0.05).
+# The Durbin-Watson statistic was approximately 2.08,
+# providing no indication of substantial first-order autocorrelation.
 
 # The Variance Inflation Factor (VIF) indicated no evidence
-
 # of multicollinearity among the explanatory variables.
 
 # The Breusch-Pagan test indicated no evidence of heteroskedasticity
-
 # (p > 0.05), suggesting that the residual variance is approximately constant.
 
 # Based on the normality diagnostics, a Box-Cox transformation will
-
 # be investigated in the next step to improve the model assumptions.
