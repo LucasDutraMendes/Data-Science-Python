@@ -4,13 +4,13 @@
 
 This project explores the **Auto MPG** dataset using **Multiple Linear Regression (OLS)** in **Python** to analyze the relationship between vehicle characteristics and fuel efficiency.
 
-The repository documents the complete development of a baseline regression model, including data preparation, correlation analysis, categorical variable encoding, model fitting, Stepwise variable selection, regression diagnostics, and an individual prediction example. Additional statistical modeling techniques will be incorporated as the project evolves.
+The project documents the development of regression models from data cleaning and exploratory analysis through categorical variable encoding, regression diagnostics, variable selection, and transformation strategies.
 
 ---
 
 ## Dataset
 
-The **Auto MPG** dataset contains technical and historical information about different vehicle models.
+The **Auto MPG** dataset contains technical and historical characteristics of vehicles used to analyze fuel efficiency.
 
 **Predictor Variables**
 
@@ -24,31 +24,49 @@ The **Auto MPG** dataset contains technical and historical information about dif
 
 **Target Variable**
 
-- MPG (Miles per Gallon)
+- MPG
 
 ---
 
 ## Objectives
 
-- Explore the relationships among the vehicle characteristics.
-- Handle missing values in the `horsepower` variable.
+- Explore the relationships among vehicle characteristics.
+- Clean and prepare the dataset for statistical modeling.
+- Handle missing horsepower values.
 - Encode the categorical `origin` variable using dummy variables.
 - Build a baseline Multiple Linear Regression (OLS) model.
 - Perform Stepwise variable selection.
-- Evaluate the assumptions of the regression model.
-- Identify multicollinearity among the explanatory variables.
-- Interpret the statistical results.
-- Generate an individual MPG prediction using the selected model.
-- Continuously improve the model using additional statistical techniques.
+- Evaluate the main assumptions of the regression model.
+- Apply Box-Cox transformation to the dependent variable.
+- Compare alternative regression specifications.
+- Evaluate multicollinearity, heteroscedasticity, normality, and autocorrelation.
+- Perform an individual vehicle prediction.
+- Interpret the statistical and analytical results.
 
 ---
 
 ## Project Structure
 
 ```text
-Auto MPG
+Auto-MPG/
 │
 ├── auto-mpg.csv
 ├── README.md
 │
-└── 01_OLS_Baseline_Model.py
+├── 01_OLS_Baseline_Model.py
+│   ├── Data Cleaning
+│   ├── Missing Value Treatment
+│   ├── Correlation Matrix
+│   ├── Categorical Variable Encoding
+│   ├── Multiple Linear Regression (OLS)
+│   ├── Confidence Intervals
+│   ├── Stepwise Variable Selection
+│   ├── Shapiro-Francia
+│   ├── Durbin-Watson
+│   ├── Variance Inflation Factor (VIF)
+│   ├── Breusch-Pagan
+│   ├── Individual Prediction
+│   └── Conclusion
+│
+└── 02_BoxCox_Model_Comparison.py
+    ├── ######## NOT FINISHED YET ###########
