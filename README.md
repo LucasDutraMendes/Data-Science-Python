@@ -28,6 +28,19 @@ Python/
 │   │   ├── Variance Inflation Factor (VIF)
 │   │   └── Breusch-Pagan
 │   │
+│   ├── 02_BoxCox_Model_Comparison.py
+│   │   ├── Box-Cox Transformation (Dependent Variable)
+│   │   ├── Box-Cox Transformation (Independent Variables)
+│   │   ├── Yeo-Johnson Transformation
+│   │   ├── Full Transformation
+│   │   ├── OLS Model Comparison
+│   │   ├── Stepwise Variable Selection
+│   │   ├── Shapiro-Wilk
+│   │   ├── Shapiro-Francia
+│   │   ├── Durbin-Watson
+│   │   ├── Variance Inflation Factor (VIF)
+│   │   └── Breusch-Pagan
+│   │
 │   └── README.md
 │
 ├── Auto-MPG/
